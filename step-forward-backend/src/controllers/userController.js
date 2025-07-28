@@ -1,56 +1,95 @@
 // userController.js
 
 // This file defines the controller logic for user-related API endpoints.
-// It handles requests, interacts with the 'User' model (which would be
-// defined separately for database operations, e.g., using Mongoose for MongoDB),
+// It handles requests, interacts with the 'User' model (using Mongoose for MongoDB),
 // and sends back responses.
 
-const users = []; // In-memory user storage for demonstration
+const User = require('../models/user'); // Adjust path as needed
 
 // Get all users
-exports.getAllUsers = (req, res) => {
-    res.status(200).json(users);
+exports.getAllUsers = async (req, res) => {
+    try {
+        const users = await User.find();
+        res.status(200).json(users);
+    } catch (err) {
+        res.status(500).json({ message: 'Server error.' });
+    }
 };
 
 // Create a new user
-exports.createUser = (req, res) => {
-    const { name, email } = req.body;
-    if (!name || !email) {
-        return res.status(400).json({ message: 'Name and email are required.' });
+exports.createUser = async (req, res) => {
+    const { email, password } = req.body;
+    if (!email || !password) {
+        return res.status(400).json({ message: 'Email and password are required.' });
     }
-    const newUser = { id: users.length + 1, name, email };
-    users.push(newUser);
-    res.status(201).json(newUser);
+    try {
+        const newUser = new User({ email, password });
+        await newUser.save();
+        res.status(201).json(newUser);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
 };
 
 // Get a user by ID
-exports.getUserById = (req, res) => {
-    const user = users.find(u => u.id === parseInt(req.params.id));
-    if (!user) {
-        return res.status(404).json({ message: 'User not found.' });
+exports.getUserById = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found.' });
+        }
+        res.status(200).json(user);
+    } catch (err) {
+        res.status(500).json({ message: 'Server error.' });
     }
-    res.status(200).json(user);
 };
 
 // Update a user by ID
-exports.updateUser = (req, res) => {
-    const user = users.find(u => u.id === parseInt(req.params.id));
-    if (!user) {
-        return res.status(404).json({ message: 'User not found.' });
-    }
+exports.updateUser = async (req, res) => {
     const { name, email } = req.body;
-    if (name) user.name = name;
-    if (email) user.email = email;
-    res.status(200).json(user);
+    try {
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found.' });
+        }
+        if (name) user.name = name;
+        if (email) user.email = email;
+        await user.save();
+        res.status(200).json(user);
+    } catch (err) {
+        res.status(500).json({ message: 'Server error.' });
+    }
+};
+
+// Log in user
+exports.loginUser = async (req, res) => {
+    const { email, password } = req.body;
+    if (!email || !password) {
+        return res.status(400).json({ message: 'Email and password are required.' });
+    }
+    try {
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(401).json({ message: 'Invalid credentials.' });
+        }
+        if (password === user.password) {
+            return res.status(401).json({ message: 'Invalid credentials.' });
+        }
+        res.status(200).json({ user });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
 };
 
 // Delete a user by ID
-exports.deleteUser = (req, res) => {
-    const userIndex = users.findIndex(u => u.id === parseInt(req.params.id));
-    if (userIndex === -1) {
-        return res.status(404).json({ message: 'User not found.' });
+exports.deleteUser = async (req, res) => {
+    try {
+        const user = await User.findByIdAndDelete(req.params.id);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found.' });
+        }
+        res.status(204).send();
+    } catch (err) {
+        res.status(500).json({ message: 'Server error.' });
     }
-    users.splice(userIndex, 1);
-    res.status(204).send();
 };
-

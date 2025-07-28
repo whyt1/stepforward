@@ -5,6 +5,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const connectDB = require('./mongodb/mongodbConnection');
+
+// Connect to database
+connectDB();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
