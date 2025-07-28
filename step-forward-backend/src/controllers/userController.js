@@ -8,6 +8,7 @@ const User = require('../models/user'); // Adjust path as needed
 
 // Get all users
 exports.getAllUsers = async (req, res) => {
+    console.log("getAllUsers")
     try {
         const users = await User.find();
         res.status(200).json(users);
@@ -18,6 +19,7 @@ exports.getAllUsers = async (req, res) => {
 
 // Create a new user
 exports.createUser = async (req, res) => {
+    console.log("createUser")
     const { email, password } = req.body;
     if (!email || !password) {
         return res.status(400).json({ message: 'Email and password are required.' });
@@ -33,6 +35,7 @@ exports.createUser = async (req, res) => {
 
 // Get a user by ID
 exports.getUserById = async (req, res) => {
+    console.log("getUserById")
     try {
         const user = await User.findById(req.params.id);
         if (!user) {
@@ -46,6 +49,7 @@ exports.getUserById = async (req, res) => {
 
 // Update a user by ID
 exports.updateUser = async (req, res) => {
+    console.log("updateUser")
     const { name, email } = req.body;
     try {
         const user = await User.findById(req.params.id);
@@ -63,6 +67,7 @@ exports.updateUser = async (req, res) => {
 
 // Log in user
 exports.loginUser = async (req, res) => {
+    console.log("loginUser")
     const { email, password } = req.body;
     if (!email || !password) {
         return res.status(400).json({ message: 'Email and password are required.' });
@@ -72,7 +77,7 @@ exports.loginUser = async (req, res) => {
         if (!user) {
             return res.status(401).json({ message: 'Invalid credentials.' });
         }
-        if (password === user.password) {
+        if (password !== user.password) {
             return res.status(401).json({ message: 'Invalid credentials.' });
         }
         res.status(200).json({ user });
@@ -83,6 +88,7 @@ exports.loginUser = async (req, res) => {
 
 // Delete a user by ID
 exports.deleteUser = async (req, res) => {
+    console.log("deleteUser")
     try {
         const user = await User.findByIdAndDelete(req.params.id);
         if (!user) {

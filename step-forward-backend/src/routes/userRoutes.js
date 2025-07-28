@@ -13,6 +13,9 @@ router.get('/', userController.getAllUsers);
 // POST a new user
 router.post('/', userController.createUser);
 
+// POST login
+router.post('/login', userController.loginUser);
+
 // GET a user by ID
 router.get('/:id', userController.getUserById);
 
