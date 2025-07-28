@@ -19,9 +19,11 @@ app.use(bodyParser.json());
 
 // Import routes
 const userRoutes = require('./routes/userRoutes');
+const feedbackRoutes = require('./routes/feedbackRoutes');
 
 // Use routes
 app.use('/api/users', userRoutes);
+app.use('/api/feedback', feedbackRoutes);
 
 // Start the server
 app.listen(PORT, () => {
