@@ -1,0 +1,91 @@
+paths:
+  /api/feedback:
+    post:
+      summary: Submit feedback for a game
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Feedback'
+      responses:
+        '201':
+          description: Feedback submitted successfully
+        '400':
+          description: Invalid input
+    get:
+      summary: Get all feedback
+      responses:
+        '200':
+          description: List of feedback
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Feedback'
+        '500':
+          description: Server error
+components:
+  schemas:
+    Feedback:
+      type: object
+      properties:
+        game:
+          type: string
+        educationalValue:
+          type: integer
+          minimum: 1
+          maximum: 5
+        engagementLevel:
+          type: integer
+          minimum: 1
+          maximum: 5
+        userInterface:
+          type: integer
+          minimum: 1
+          maximum: 5
+        comments:
+          type: string
+  /api/feedback/{game}:
+    get:
+      summary: Get feedback for a specific game
+      parameters:
+        - in: path
+          name: game
+          required: true
+          schema:
+            type: string
+          description: Name of the game to filter feedback
+      responses:
+        '200':
+          description: List of feedback for the specified game
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Feedback'
+        '500':
+          description: Server error
+components:
+  schemas:
+    Feedback:
+      type: object
+      properties:
+        game:
+          type: string
+        educationalValue:
+          type: integer
+          minimum: 1
+          maximum: 5
+        engagementLevel:
+          type: integer
+          minimum: 1
+          maximum: 5
+        userInterface:
+          type: integer
+          minimum: 1
+          maximum: 5
+        comments:
+          type: string
