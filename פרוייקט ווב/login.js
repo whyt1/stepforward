@@ -1,3 +1,5 @@
+const baseURL = "http://localhost:3000/api" // get from env file? 
+
 document.addEventListener("DOMContentLoaded", function () {
   const loginButton = document.getElementById("loginBtn");
 
@@ -5,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    fetch("/login", {
+    fetch(baseURL+"/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -13,11 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify({ email, password })
     })
     .then(response => {
+      console.log("login", response)
       if (response.ok) {
-        // התחברות הצליחה – עבור לדשבורד
         window.location.href = "dashboard.html";
       } else {
-        // התחברות נכשלה – הודעה למשתמש
         alert("Login failed. Please check your credentials.");
       }
     })
