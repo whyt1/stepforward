@@ -1,0 +1,270 @@
+openapi: 3.0.0
+info:
+  title: User Management API
+  description: API for managing users in the Step Forward web application.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000/api # Adjust based on your actual backend URL
+    description: Local development server
+tags:
+  - name: Users
+    description: User management operations
+
+paths:
+  /users:
+    get:
+      summary: Get all users
+      operationId: getAllUsers
+      tags:
+        - Users
+      responses:
+        '200':
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+              examples:
+                success:
+                  value:
+                    - id: 1
+                      name: John Doe
+                      email: john@example.com
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                error:
+                  value:
+                    message: Internal Server Error
+    post:
+      summary: Create a new user
+      operationId: createUser
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - email
+              properties:
+                name:
+                  type: string
+                  description: The name of the user.
+                  example: Jane Doe
+                email:
+                  type: string
+                  format: email
+                  description: The email address of the user.
+                  example: jane@example.com
+      responses:
+        '201':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                success:
+                  value:
+                    id: 2
+                    name: Jane Doe
+                    email: jane@example.com
+        '400':
+          description: Bad Request (e.g., missing fields)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                badRequest:
+                  value:
+                    message: Name and email are required.
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                error:
+                  value:
+                    message: Internal Server Error
+
+  /users/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+        description: The ID of the user to retrieve, update, or delete.
+    get:
+      summary: Get user by ID
+      operationId: getUserById
+      tags:
+        - Users
+      responses:
+        '200':
+          description: User data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                success:
+                  value:
+                    id: 1
+                    name: John Doe
+                    email: john@example.com
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                notFound:
+                  value:
+                    message: User not found.
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                error:
+                  value:
+                    message: Internal Server Error
+    put:
+      summary: Update user by ID
+      operationId: updateUserById
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The new name of the user.
+                  example: John Smith
+                email:
+                  type: string
+                  format: email
+                  description: The new email address of the user.
+                  example: john.smith@example.com
+            examples:
+              updateName:
+                value:
+                  name: John Smith
+      responses:
+        '200':
+          description: User updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                success:
+                  value:
+                    id: 1
+                    name: John Smith
+                    email: john@example.com
+        '400':
+          description: Bad Request (e.g., invalid data)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                badRequest:
+                  value:
+                    message: Invalid email format.
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                notFound:
+                  value:
+                    message: User not found.
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                error:
+                  value:
+                    message: Internal Server Error
+    delete:
+      summary: Delete user by ID
+      operationId: deleteUserById
+      tags:
+        - Users
+      responses:
+        '204':
+          description: User deleted successfully (No Content)
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                notFound:
+                  value:
+                    message: User not found.
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                error:
+                  value:
+                    message: Internal Server Error
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The unique identifier of the user.
+          example: 1
+        name:
+          type: string
+          description: The name of the user.
+          example: John Doe
+        email:
+          type: string
+          format: email
+          description: The email address of the user.
+          example: john@example.com
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          description: A descriptive error message.
+          example: Something went wrong.
