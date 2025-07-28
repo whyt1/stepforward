@@ -1,3 +1,7 @@
+openapi: 3.0.0
+info:
+  title: Feedback API
+  version: 1.0.0
 paths:
   /api/feedback:
     post:
@@ -26,27 +30,6 @@ paths:
                   $ref: '#/components/schemas/Feedback'
         '500':
           description: Server error
-components:
-  schemas:
-    Feedback:
-      type: object
-      properties:
-        game:
-          type: string
-        educationalValue:
-          type: integer
-          minimum: 1
-          maximum: 5
-        engagementLevel:
-          type: integer
-          minimum: 1
-          maximum: 5
-        userInterface:
-          type: integer
-          minimum: 1
-          maximum: 5
-        comments:
-          type: string
   /api/feedback/{game}:
     get:
       summary: Get feedback for a specific game
