@@ -4,7 +4,7 @@ info:
   description: Consolidated API documentation for the Step Forward application, including users and feedback.
   version: 1.0.0
 servers:
-  - url: http://localhost:3000/api
+  - url: https://stepforward.onrender.com:10000/api
     description: Local development server
 tags:
   - name: Users
@@ -221,7 +221,7 @@ paths:
                 $ref: '#/components/schemas/Error'
 
   # Paths from feedbackOpenAPI.yaml
-  /api/feedback: # Note: This path includes '/api' in the original. If your server is at http://localhost:3000/api, this will become /api/api/feedback. Consider if you want to remove the leading /api here or adjust your server base path.
+  /feedback:
     post:
       summary: Submit feedback for a game
       requestBody:
@@ -248,7 +248,7 @@ paths:
                   $ref: '#/components/schemas/Feedback'
         '500':
           description: Server error
-  /api/feedback/{game}: # Same note about /api prefix
+  /feedback/{game}: 
     get:
       summary: Get feedback for a specific game
       parameters:

@@ -44,7 +44,7 @@ app.use('/api/users', userRoutes);
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on https://stepforward.onrender.com:${PORT}`);
 });
 ```
 

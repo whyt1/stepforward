@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:3000/api" // get from env file? 
+const baseURL = "https://stepforward.onrender.com:10000/api" // get from env file? 
 
 document.addEventListener("DOMContentLoaded", function () {
   const loginButton = document.getElementById("loginBtn");
