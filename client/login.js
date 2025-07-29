@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch(error => {
       console.error("Error during login:", error);
-      alert("An error occurred. Please try again later.");
+      alert("An error occurred. Please try again later."+ " Error: " + error.message);
     });
   });
 });
