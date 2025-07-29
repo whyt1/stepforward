@@ -1,4 +1,4 @@
-const baseURL = "https://stepforward.onrender.com:10000/api";
+const baseURL = "https://stepforward.onrender.com/api";
 
 document.addEventListener("DOMContentLoaded", function () {
   const feedbackButton = document.getElementById("feedbackButton");

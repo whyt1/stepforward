@@ -4,7 +4,7 @@ info:
   description: Consolidated API documentation for the Step Forward application, including users and feedback.
   version: 1.0.0
 servers:
-  - url: https://stepforward.onrender.com:10000/api
+  - url: https://stepforward.onrender.com/api
     description: Local development server
 tags:
   - name: Users
