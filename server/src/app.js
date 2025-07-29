@@ -28,6 +28,6 @@ app.use('/api/feedback', feedbackRoutes);
 app.use('/api/games', gamesRoutes);
 
 // Start the server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on https://stepforward.onrender.com/api`);
 });
