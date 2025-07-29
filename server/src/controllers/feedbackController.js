@@ -2,6 +2,7 @@ const Feedback = require('../models/feedback');
 
 exports.createFeedback = async (req, res) => {
   try {
+    console.log("createFeedback")
     const feedback = new Feedback(req.body);
     await feedback.save();
     res.status(201).json({ message: 'Feedback submitted', feedback });
@@ -12,6 +13,7 @@ exports.createFeedback = async (req, res) => {
 
 exports.getAllFeedback = async (req, res) => {
   try {
+    console.log("getAllFeedback")
     const feedbacks = await Feedback.find();
     res.status(200).json(feedbacks);
   } catch (error) {
@@ -21,6 +23,7 @@ exports.getAllFeedback = async (req, res) => {
 
 exports.getFeedbackByGame = async (req, res) => {
   try {
+    console.log("getFeedbackByGame")
     const { game } = req.params;
     const feedbacks = await Feedback.find({ game });
     res.status(200).json(feedbacks);
