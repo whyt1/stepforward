@@ -20,10 +20,12 @@ app.use(bodyParser.json());
 // Import routes
 const userRoutes = require('./routes/userRoutes');
 const feedbackRoutes = require('./routes/feedbackRoutes');
+const gamesRoutes = require('./routes/gameRoutes');
 
 // Use routes
 app.use('/api/users', userRoutes);
 app.use('/api/feedback', feedbackRoutes);
+app.use('/api/games', gamesRoutes);
 
 // Start the server
 app.listen(PORT, () => {
