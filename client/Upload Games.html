@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload Game - StepForward</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo" class="logo-img" />
+      StepForward
+    </div>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Parent Portal</a>
+      <a href="#">Game Developer Portal</a>
+    </nav>
+  </header>
+
+  <!-- Developer Menu -->
+  <div class="dashboard-container">
+ <aside class="sidebar-developer">
+  <span style="margin-bottom: 10px;">DEVELOPER MENU</span>
+   <a href="#">Dashboard</a>
+  <a href="#" class="active">Upload Games</a>
+  <a href="#">User Feedback</a>
+  <a href="#">Games Analytics</a>
+</aside>
+
+    <!-- Main Content -->
+    <main class="content-area">
+      <section class="upload-section">
+
+        <div class="upload-form-container">
+          <h2>New Game Submission</h2>
+
+          <div class="form-grid">
+            <div>
+              <label>Game Title</label>
+              <input type="text" placeholder="Enter game title" />
+            </div>
+            <div>
+              <label>Category</label>
+              <select>
+                <option>Mathematics</option>
+                <option>Language</option>
+                <option>Science</option>
+              </select>
+            </div>
+            <div>
+              <label>Age Range</label>
+              <select>
+                <option>3-5 years</option>
+                <option>6-8 years</option>
+              </select>
+            </div>
+            <div>
+              <label>Difficulty Level</label>
+              <select>
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+              </select>
+            </div>
+          </div>
+
+          <label>Game Description</label>
+          <textarea rows="3" placeholder="Describe your game and its educational benefits..."></textarea>
+
+          <label>Learning Objectives</label>
+          <textarea rows="2" placeholder="List the educational objectives your game addresses..."></textarea>
+
+          <label>Game File</label>
+          <div class="file-upload-box">
+            <p>Drag and drop your game files here</p>
+            <button class="blue-btn">Browse Files</button>
+          </div>
+
+          <label>Game Screenshots</label>
+          <div class="screenshot-upload">
+            <div class="screenshot-box">Add Screenshot</div>
+            <div class="screenshot-box">Add Screenshot</div>
+            <div class="screenshot-box">Add Screenshot</div>
+          </div>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="agree" />
+            <label for="agree">I agree to the StepForward Developer Terms and Guidelines</label>
+          </div>
+
+          <button class="blue-btn full-width">Submit Game</button>
+        </div>
+
+        <div class="submission-guidelines">
+          <h3>Submission Guidelines</h3>
+          <div class="guideline-box">
+            <h4>Educational Value</h4>
+            <p>All games must have clear educational objectives and align with standard learning outcomes for the target age group.</p>
+          </div>
+          <div class="guideline-box">
+            <h4>Content Appropriateness</h4>
+            <p>Content must be age-appropriate with no violence, inappropriate language, or unsafe scenarios.</p>
+          </div>
+          <div class="guideline-box">
+            <h4>Performance Requirements</h4>
+            <p>Game should run smoothly on standard devices with limited loading times and no crashes.</p>
+          </div>
+          <div class="guideline-box">
+            <h4>Data Privacy</h4>
+            <p>Games must comply with all data privacy regulations and clearly disclose any data collected or stored.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <strong>StepForward</strong><br />
+      Empowering the next generation through innovative educational solutions.
+    </div>
+    <div class="footer-right">
+      <img src="images/facebook.png" alt="Facebook" />
+      <img src="images/twitter.png" alt="Twitter" />
+    </div>
+  </footer>
+
+</body>
+</html>
