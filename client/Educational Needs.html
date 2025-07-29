@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Set Educational Needs - StepForward</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo" class="logo-img">
+      StepForward
+    </div>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Parent Portal</a>
+      <a href="#">Game Developer Portal</a>
+    </nav>
+  </header>
+
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <a href="#">Dashboard</a>
+      <a href="#" class="active">Educational Needs</a>
+      <a href="#">Discover Games</a>
+      <a href="#">Play Games</a>
+      <a href="#">Track Progress</a>
+      <a href="#">Provide Feedback</a>
+    </aside>
+
+    <main class="content-area">
+      <h2>Set Educational Needs</h2>
+
+      <div class="preferences-card">
+        <div class="form-grid">
+          <div>
+            <label for="grade">Select Grade Level</label>
+            <select id="grade">
+              <option>Kindergarten</option>
+              <option>1st Grade</option>
+              <option>2nd Grade</option>
+            </select>
+          </div>
+          <div>
+            <label for="language">Language Preference</label>
+            <select id="language">
+              <option>English</option>
+              <option>Hebrew</option>
+              <option>Arabic</option>
+            </select>
+          </div>
+          <div>
+            <label for="focus">Select Additional Focus Areas</label>
+            <select id="focus">
+              <option>Art</option>
+              <option>Music</option>
+              <option>PE</option>
+            </select>
+          </div>
+          <div>
+            <label for="goal">Set Goals</label>
+            <select id="goal">
+              <option>Reading</option>
+              <option>Writing</option>
+              <option>Math</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="toggle-row">
+          <label class="toggle-label">
+            <input type="checkbox" checked />
+            <span class="toggle-slider"></span>
+            Enable Math Focus
+          </label>
+          <label class="toggle-label">
+            <input type="checkbox" />
+            <span class="toggle-slider"></span>
+            Enable Science Focus
+          </label>
+        </div>
+
+        <button class="submit-btn">Submit Preferences</button>
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div>StepForward<br><small>Empowering the next generation through innovative educational solutions.</small></div>
+    <div class="footer-right">
+      <img src="images/facebook.png" alt="Facebook">
+      <img src="images/twitter.png" alt="Twitter">
+    </div>
+  </footer>
+
+</body>
+</html>

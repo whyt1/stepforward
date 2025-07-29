@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Play Games - StepForward</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo" class="logo-img">
+      StepForward
+    </div>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Parent Portal</a>
+      <a href="#">Game Developer Portal</a>
+    </nav>
+  </header>
+
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <a href="#">Dashboard</a>
+      <a href="#">Educational Needs</a>
+      <a href="#">Discover Games</a>
+      <a href="#" class="active">Play Games</a>
+      <a href="#">Track Progress</a>
+      <a href="#">Provide Feedback</a>
+    </aside>
+
+    <main class="content-area">
+      <h2>Play Games</h2>
+
+      <div class="games-layout">
+        <!-- Filters -->
+        <div class="game-filters">
+          <h3>Filter Games</h3>
+
+          <label for="subject">Subject</label>
+          <select id="subject">
+            <option>All Subjects</option>
+          </select>
+
+          <label for="difficulty">Difficulty</label>
+          <select id="difficulty">
+            <option>Most Difficult</option>
+          </select>
+
+          <label for="date">Date Played</label>
+          <select id="date">
+            <option>Last Played</option>
+          </select>
+        </div>
+
+        <!-- Game Cards -->
+        <div class="game-cards">
+          <div class="game-card">
+            <img src="images/puzzle.png" alt="Puzzle Master">
+            <h4>Puzzle Master</h4>
+            <p>Solve puzzles and enhance problem-solving skills.</p>
+            <button class="play-btn">Play</button>
+          </div>
+
+          <div class="game-card">
+            <img src="images/math game3.png" alt="Math Whiz">
+            <h4>Math Whiz</h4>
+            <p>Fun math challenges to boost arithmetic skills.</p>
+            <button class="play-btn">Play</button>
+          </div>
+
+          <div class="game-card">
+            <img src="images/art.png" alt="Creative Canvas">
+            <h4>Creative Canvas</h4>
+            <p>Unleash creativity with fun drawing activities.</p>
+            <button class="play-btn">Play</button>
+          </div>
+
+          <div class="game-card">
+            <img src="images/history game.png" alt="History Quest">
+            <h4>History Quest</h4>
+            <p>Discover history through interactive quests.</p>
+            <button class="play-btn">Play</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div>StepForward<br><small>Empowering the next generation through innovative educational solutions.</small></div>
+    <div class="footer-right">
+      <img src="images/facebook.png" alt="Facebook">
+      <img src="images/twitter.png" alt="Twitter">
+    </div>
+  </footer>
+
+</body>
+</html>
