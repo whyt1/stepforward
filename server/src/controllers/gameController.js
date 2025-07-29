@@ -1,7 +1,7 @@
 const Game = require('../models/game');
 
 
-exports.getAllGames('/', async (req, res) => {
+exports.getAllGames = async (req, res) => {
   try {
     console.log("getAllGames")
     const games = await Game.find();
@@ -9,7 +9,7 @@ exports.getAllGames('/', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err });
   }
-});
+};
 
 exports.addGame = async (req, res) => {
   try {
