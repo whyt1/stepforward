@@ -1,0 +1,1663 @@
+{
+	"info": {
+		"_postman_id": "aef73e0f-3c4b-4865-ba54-2c5babfa6d13",
+		"name": "API",
+		"description": "Consolidated API documentation for the Step Forward application, including users and feedback.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "47130716-aef73e0f-3c4b-4865-ba54-2c5babfa6d13"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Get user by ID",
+							"id": "a1d5479f-0730-4fe5-9973-2eaed447a7f0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "ea ut commodo velit cil",
+											"description": "(Required) The ID of the user to retrieve, update, or delete."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "f68301f3-8e7e-49d9-ad33-f3e39877203c",
+									"name": "User data",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "e30da68a-a786-4986-9e50-94fca623765e"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"_id\": \"Duis irure aliquip est\",\n  \"email\": \"0QU34Js@dWxaEAdbqjwCVnTzo.ybn\",\n  \"name\": \"laborum amet aliquip fugiat\"\n}"
+								},
+								{
+									"id": "e62991d5-04a9-4d24-8a6a-d11eafb1e213",
+									"name": "User not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "009801e7-8fc6-4f47-95ea-0509390e5409"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"cillum occaecat sed in anim\"\n}"
+								},
+								{
+									"id": "058fdd88-bc0c-4e2f-9271-cdc865fe496d",
+									"name": "Server error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "72c59514-dcfc-48b4-bad4-8503631fa992"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"cillum occaecat sed in anim\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update user by ID",
+							"id": "73042c2e-e90d-43bc-8be7-c736de599890",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"mollit commodo\",\n  \"email\": \"s9I6J@ezwnQ.ui\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "ea ut commodo velit cil",
+											"description": "(Required) The ID of the user to retrieve, update, or delete."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "40a94cbb-bc11-4214-8ebd-df171e76016a",
+									"name": "User updated successfully",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"mollit commodo\",\n  \"email\": \"s9I6J@ezwnQ.ui\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "0a9d1391-f008-410b-a447-e04032dbf798"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"_id\": \"Duis irure aliquip est\",\n  \"email\": \"0QU34Js@dWxaEAdbqjwCVnTzo.ybn\",\n  \"name\": \"laborum amet aliquip fugiat\"\n}"
+								},
+								{
+									"id": "09ba111d-1c69-411c-926c-d3195db2de84",
+									"name": "User not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"mollit commodo\",\n  \"email\": \"s9I6J@ezwnQ.ui\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "d319dc02-c4fa-4995-a26b-9de69e95552c"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"cillum occaecat sed in anim\"\n}"
+								},
+								{
+									"id": "c8870d50-118b-4a67-adb6-0ff192648d5f",
+									"name": "Server error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"mollit commodo\",\n  \"email\": \"s9I6J@ezwnQ.ui\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "5abab0aa-3e72-4084-9bac-97fdb458812e"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"cillum occaecat sed in anim\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete user by ID",
+							"id": "3a8228e3-8b6b-450f-aaf7-d63c696551b0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "ea ut commodo velit cil",
+											"description": "(Required) The ID of the user to retrieve, update, or delete."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "aa016d69-2981-4b54-86c3-89dcfaddaa28",
+									"name": "User deleted successfully (No Content)",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								},
+								{
+									"id": "861ec35c-07e9-4f46-ace2-7d9bf6e5074f",
+									"name": "User not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "99bee344-6990-472f-8c15-237c08160938"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"cillum occaecat sed in anim\"\n}"
+								},
+								{
+									"id": "00ac3a9a-1290-4201-bc08-4198ac392a19",
+									"name": "Server error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "5a0751d5-cf63-4f54-9b94-ce6b1eb65bc4"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"cillum occaecat sed in anim\"\n}"
+								}
+							]
+						}
+					],
+					"id": "27aa67e3-7312-48b8-941a-ee73c5d76ef4"
+				},
+				{
+					"name": "login",
+					"item": [
+						{
+							"name": "Log in user",
+							"id": "46763e05-f679-48d5-9378-a468a9e9c62f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"WycT3dOQFMf@CnIPCiOjrkkgfInSwGrrj.ls\",\n  \"password\": \"voluptate consequat eiusmod anim\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "47a78508-d465-4c27-a405-4c512142cca3",
+									"name": "User logged in successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"WycT3dOQFMf@CnIPCiOjrkkgfInSwGrrj.ls\",\n  \"password\": \"voluptate consequat eiusmod anim\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "6153a665-e65a-43bd-aba4-ba4fc7f2ccdb"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"user\": {\n    \"_id\": \"cupidatat\",\n    \"email\": \"alJdp85njRuJ2JK@hhhBCyFsKjZGzvWeoVGPFkZuG.ncj\",\n    \"name\": \"exercitation aute Lorem\"\n  }\n}"
+								},
+								{
+									"id": "be459d65-447e-4273-8f01-abd6eabc3238",
+									"name": "Email and password are required.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"WycT3dOQFMf@CnIPCiOjrkkgfInSwGrrj.ls\",\n  \"password\": \"voluptate consequat eiusmod anim\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"login"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "2432a839-455a-45ad-9c7c-2fa633c33e51"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"cillum occaecat sed in anim\"\n}"
+								},
+								{
+									"id": "17251531-1732-4a5c-a515-fe200229e59c",
+									"name": "Invalid credentials.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"WycT3dOQFMf@CnIPCiOjrkkgfInSwGrrj.ls\",\n  \"password\": \"voluptate consequat eiusmod anim\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"login"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "29b4b3ef-3760-403c-9de7-bab2f001193f"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"cillum occaecat sed in anim\"\n}"
+								},
+								{
+									"id": "3220e5f5-1af2-4968-9a39-e073501cada9",
+									"name": "Server error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"WycT3dOQFMf@CnIPCiOjrkkgfInSwGrrj.ls\",\n  \"password\": \"voluptate consequat eiusmod anim\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"login"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "f62e434c-997a-4448-b954-524194d16660"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"cillum occaecat sed in anim\"\n}"
+								}
+							]
+						}
+					],
+					"id": "4ba8601f-fb0c-46b1-be78-f840d3a46e28"
+				},
+				{
+					"name": "Get all users",
+					"id": "be24b94c-056a-4409-afce-a6ced32003a4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "6cf097e9-2c12-4b1c-b87e-16e4429b4c19",
+							"name": "A list of users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "1f50ac56-3413-4284-a47b-5f3653460508"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"_id\": \"laboris eiusmod ea proident\",\n    \"email\": \"ErxaJ06g48uK@fqKAQlHnwYzfyzMVcgH.vfuc\",\n    \"name\": \"aute dolore eu Ut\"\n  },\n  {\n    \"_id\": \"in ullamco qui\",\n    \"email\": \"QYS0ixzKwYo@oyCkJAZLoxBdrmANCjSlxdod.er\",\n    \"name\": \"nulla culpa\"\n  }\n]"
+						},
+						{
+							"id": "1b526456-55bd-469d-9807-01f338880a02",
+							"name": "Server error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "dfc45c07-ce22-480a-9283-8540de4c1e84"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"cillum occaecat sed in anim\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a new user",
+					"id": "df69bbda-d973-42bc-aff4-6c90d8e85be5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"WycT3dOQFMf@CnIPCiOjrkkgfInSwGrrj.ls\",\n  \"password\": \"voluptate consequat eiusmod anim\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "9659759d-7abe-4807-bfb0-1430240bffe0",
+							"name": "User created successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"WycT3dOQFMf@CnIPCiOjrkkgfInSwGrrj.ls\",\n  \"password\": \"voluptate consequat eiusmod anim\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "2b629d1a-a555-448d-9031-729657f5d2f1"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"_id\": \"Duis irure aliquip est\",\n  \"email\": \"0QU34Js@dWxaEAdbqjwCVnTzo.ybn\",\n  \"name\": \"laborum amet aliquip fugiat\"\n}"
+						},
+						{
+							"id": "8ff784b0-78f9-4c65-a2eb-14b94f3f1c4a",
+							"name": "Email and password are required.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"WycT3dOQFMf@CnIPCiOjrkkgfInSwGrrj.ls\",\n  \"password\": \"voluptate consequat eiusmod anim\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "7f8e8ca5-8289-427e-8fa9-04b5096bda62"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"cillum occaecat sed in anim\"\n}"
+						},
+						{
+							"id": "0ae7f160-5b28-496b-bc24-780624271dd4",
+							"name": "Server error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"WycT3dOQFMf@CnIPCiOjrkkgfInSwGrrj.ls\",\n  \"password\": \"voluptate consequat eiusmod anim\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "0df94f32-1a76-46c1-99cf-c6191b6fce0b"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"cillum occaecat sed in anim\"\n}"
+						}
+					]
+				}
+			],
+			"id": "8e9f8082-7f24-4274-a7aa-3b145de943a5"
+		},
+		{
+			"name": "feedback",
+			"item": [
+				{
+					"name": "{game}",
+					"item": [
+						{
+							"name": "Get feedback for a specific game",
+							"id": "a6cc0051-f60a-453c-b609-fdb9028b57bb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/feedback/:game",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feedback",
+										":game"
+									],
+									"variable": [
+										{
+											"key": "game",
+											"value": "ea ut commodo velit cil",
+											"description": "(Required) Name of the game to filter feedback"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "43578ae0-4b76-4cb6-b304-d87097a679de",
+									"name": "List of feedback for the specified game",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/feedback/:game",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"feedback",
+												":game"
+											],
+											"variable": [
+												{
+													"key": "game"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "6711f33f-686f-4151-89a3-644c15a817e5"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"game\": \"veniam\",\n    \"educationalValue\": 2,\n    \"engagementLevel\": 3,\n    \"userInterface\": 3,\n    \"comments\": \"Ut nulla qui fugiat\"\n  },\n  {\n    \"game\": \"eu deserunt dolore exercitation anim\",\n    \"educationalValue\": 2,\n    \"engagementLevel\": 3,\n    \"userInterface\": 3,\n    \"comments\": \"in id sunt sint non\"\n  }\n]"
+								},
+								{
+									"id": "99ebcfce-1c9d-4e23-bb13-c6b61bb31a51",
+									"name": "Server error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/feedback/:game",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"feedback",
+												":game"
+											],
+											"variable": [
+												{
+													"key": "game"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "2b341e3b-a02e-4f6b-8871-9b8342f7a27f"
+				},
+				{
+					"name": "Submit feedback for a game",
+					"id": "f9d4b5a3-32e4-45df-8862-81bf33b6f7fb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"game\": \"dolore amet tempor reprehenderit\",\n  \"educationalValue\": 3,\n  \"engagementLevel\": 1,\n  \"userInterface\": 3,\n  \"comments\": \"veniam in\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/feedback",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feedback"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "3b966a45-aede-471a-a731-0eeb53ad51ef",
+							"name": "Feedback submitted successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"game\": \"dolore amet tempor reprehenderit\",\n  \"educationalValue\": 3,\n  \"engagementLevel\": 1,\n  \"userInterface\": 3,\n  \"comments\": \"veniam in\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/feedback",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feedback"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"id": "f743d3d2-54ea-46c1-9196-f46ced46bda5",
+							"name": "Invalid input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"game\": \"dolore amet tempor reprehenderit\",\n  \"educationalValue\": 3,\n  \"engagementLevel\": 1,\n  \"userInterface\": 3,\n  \"comments\": \"veniam in\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/feedback",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feedback"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get all feedback",
+					"id": "2192e10c-12bc-43cc-8b61-c9640df4e545",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/feedback",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feedback"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "9eeb4691-a487-4984-a5ae-46d77ee54c0c",
+							"name": "List of feedback",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/feedback",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feedback"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "bc613efb-0f1d-4ea2-a4f9-9ab51c13e264"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"game\": \"veniam\",\n    \"educationalValue\": 2,\n    \"engagementLevel\": 3,\n    \"userInterface\": 3,\n    \"comments\": \"Ut nulla qui fugiat\"\n  },\n  {\n    \"game\": \"eu deserunt dolore exercitation anim\",\n    \"educationalValue\": 2,\n    \"engagementLevel\": 3,\n    \"userInterface\": 3,\n    \"comments\": \"in id sunt sint non\"\n  }\n]"
+						},
+						{
+							"id": "6d3d88b8-98da-4efd-9b80-353700d26c6a",
+							"name": "Server error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/feedback",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feedback"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"id": "d783e58e-1f3d-44c4-a679-011b0c5a452b"
+		},
+		{
+			"name": "games",
+			"item": [
+				{
+					"name": "Get all games",
+					"id": "01bde3a0-e399-46c5-834d-5e2f47f4fdbb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/games",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"games"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "502c08b3-5365-4d59-a532-9f5bb5723d9a",
+							"name": "A list of games",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/games",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "d6724bd1-8c4f-4e9c-906e-cd0eedbcb265"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"_id\": \"non id\",\n    \"title\": \"commodo ea eiusmod a\",\n    \"image\": \"consectetur v\",\n    \"description\": \"sunt tempor\",\n    \"rating\": 0.49421111540393414,\n    \"downloadUrl\": \"tempor ut irure\",\n    \"createdAt\": \"2004-11-01T00:31:08.514Z\",\n    \"updatedAt\": \"2011-12-07T19:33:36.542Z\"\n  },\n  {\n    \"_id\": \"dolor cillum ea\",\n    \"title\": \"eu veniam ex velit\",\n    \"image\": \"quis enim\",\n    \"description\": \"laborum consectetur Lorem\",\n    \"rating\": 1.9625804706348926,\n    \"downloadUrl\": \"sit ipsum\",\n    \"createdAt\": \"2020-02-26T20:05:44.268Z\",\n    \"updatedAt\": \"1953-09-14T00:21:05.935Z\"\n  }\n]"
+						},
+						{
+							"id": "7825cec0-dd93-47da-80d6-47657a9ed844",
+							"name": "Server error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/games",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "f1e9c000-13ff-4c49-84ec-e0cd9d9b3322"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"cillum occaecat sed in anim\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add a new game",
+					"id": "10d22f09-68f0-425e-9554-0a8f95c681ee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"_id\": \"est ex Lorem culpa ut\",\n  \"title\": \"Lorem commodo in\",\n  \"image\": \"Duis occaecat\",\n  \"description\": \"consectetur sed in\",\n  \"rating\": 0.8549450867503539,\n  \"downloadUrl\": \"Excepteur\",\n  \"createdAt\": \"2024-10-02T10:06:45.994Z\",\n  \"updatedAt\": \"1982-06-04T05:20:24.535Z\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/games",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"games"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "5bbe8403-5204-4b68-9c2c-86375f8318c7",
+							"name": "Game added successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"_id\": \"est ex Lorem culpa ut\",\n  \"title\": \"Lorem commodo in\",\n  \"image\": \"Duis occaecat\",\n  \"description\": \"consectetur sed in\",\n  \"rating\": 0.8549450867503539,\n  \"downloadUrl\": \"Excepteur\",\n  \"createdAt\": \"2024-10-02T10:06:45.994Z\",\n  \"updatedAt\": \"1982-06-04T05:20:24.535Z\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/games",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "6cc89e8f-8685-4f01-a738-f062e6e99264"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"_id\": \"est ex Lorem culpa ut\",\n  \"title\": \"Lorem commodo in\",\n  \"image\": \"Duis occaecat\",\n  \"description\": \"consectetur sed in\",\n  \"rating\": 0.8549450867503539,\n  \"downloadUrl\": \"Excepteur\",\n  \"createdAt\": \"2024-10-02T10:06:45.994Z\",\n  \"updatedAt\": \"1982-06-04T05:20:24.535Z\"\n}"
+						},
+						{
+							"id": "6f976129-cafe-42e9-be1a-b7b226c05380",
+							"name": "Invalid input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"_id\": \"est ex Lorem culpa ut\",\n  \"title\": \"Lorem commodo in\",\n  \"image\": \"Duis occaecat\",\n  \"description\": \"consectetur sed in\",\n  \"rating\": 0.8549450867503539,\n  \"downloadUrl\": \"Excepteur\",\n  \"createdAt\": \"2024-10-02T10:06:45.994Z\",\n  \"updatedAt\": \"1982-06-04T05:20:24.535Z\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/games",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "8e95f9dd-2657-4a88-94b1-f152af76ad76"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"cillum occaecat sed in anim\"\n}"
+						},
+						{
+							"id": "07aaab32-5010-438d-8f61-74611dbfe680",
+							"name": "Server error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"_id\": \"est ex Lorem culpa ut\",\n  \"title\": \"Lorem commodo in\",\n  \"image\": \"Duis occaecat\",\n  \"description\": \"consectetur sed in\",\n  \"rating\": 0.8549450867503539,\n  \"downloadUrl\": \"Excepteur\",\n  \"createdAt\": \"2024-10-02T10:06:45.994Z\",\n  \"updatedAt\": \"1982-06-04T05:20:24.535Z\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/games",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "f20f2d51-b41b-4f1c-ae7d-dbaaf003d222"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"cillum occaecat sed in anim\"\n}"
+						}
+					]
+				}
+			],
+			"id": "d3386f6b-0f88-4b40-94dc-b79b24b284a6"
+		}
+	],
+	"variable": [
+		{
+			"id": "eed98cba-c0ef-44b5-af18-a6eb059a7b59",
+			"key": "baseUrl",
+			"value": "https://stepforward.onrender.com/api"
+		}
+	]
+}
