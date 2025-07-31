@@ -1,63 +1,69 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Discover Games page loaded");
-    const gameCardsContainer = document.getElementById('gamesContainer');
-    // const loadingMessage = document.getElementById('loadingMessage');
-    // const errorMessage = document.getElementById('errorMessage');
+      const RAWG_API_KEY = 'b7895369b7024c61868df9e585c274ae';
+      // We'll fetch 10 games from the RAWG API for a simple list.  
+      // we set the genres to '34' which corresponds to 'Educational' games.
+      const API_URL = `https://api.rawg.io/api/games?key=${RAWG_API_KEY}&genres=34`;
 
-    const API_BASE_URL = 'https://stepforward.onrender.com/api'; // Base URL for your API
+      const gamesContainer = document.getElementById('gamesContainer');
 
-    // Function to fetch games from the API
-    async function fetchGames() {
-    //   loadingMessage.style.display = 'block'; // Show loading message
-    //   errorMessage.style.display = 'none';    // Hide any previous error messages
-      gameCardsContainer.innerHTML = '';      // Clear existing cards
-
-      try {
-        const response = await fetch(`${API_BASE_URL}/games`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const games = await response.json();
-        displayGames(games);
-      } catch (error) {
-        console.error('Error fetching games:', error);
-        // errorMessage.textContent = 'Failed to load games. Please try again later.';
-        // errorMessage.style.display = 'block';
-      } finally {
-        // loadingMessage.style.display = 'none'; // Hide loading message
-      }
-    }
-
-    // Function to display games in the UI
-    function displayGames(games) {
-      if (games.length === 0) {
-        gameCardsContainer.innerHTML = '<p style="text-align: center; width: 100%;">No games found.</p>';
-        return;
-      }
-
-      games.forEach(game => {
+      // Function to create a game card element
+      const createGameCard = (game) => {
         const card = document.createElement('div');
-        card.classList.add('dashboard-card');
-
-        // Provide a fallback image or a placeholder if the image URL is missing or broken
-        const imageUrl = game.image || 'https://placehold.co/280x150/cccccc/333333?text=No+Image';
-
+        card.className = 'dashboard-card';
         card.innerHTML = `
-          <img src="${imageUrl}" alt="${game.title}" onerror="this.onerror=null;this.src='https://placehold.co/280x150/cccccc/333333?text=Image+Error';">
+          <img src="${game.image_url}" alt="${game.title}" onerror="this.onerror=null;this.src='https://placehold.co/400x200/999/fff?text=Image+Not+Found';">
           <h4>${game.title}</h4>
           <p>${game.description}</p>
-          <p>${'⭐'.repeat(Math.round(game.rating))}${'☆'.repeat(5 - Math.round(game.rating))}</p>
-          <button onclick="window.location.href='${game.downloadUrl || '#'}';">Download</button>
+          <p>${game.rating}</p>
+          <button>Download</button>
         `;
-        gameCardsContainer.appendChild(card);
-      });
-    }
+        return card;
+      };
 
-    // Initial fetch of games when the page loads
-    fetchGames();
+      // Helper function to generate a star rating string based on the rating number.
+      const getStarRating = (rating) => {
+        const fullStars = '⭐'.repeat(Math.round(rating));
+        const emptyStars = '☆'.repeat(5 - Math.round(rating));
+        return `${fullStars}${emptyStars}`;
+      };
 
-    // You can add event listeners here for your filters later if you want them to trigger new API calls
-    // For example:
-    // document.getElementById('filterMath').addEventListener('change', fetchGames);
-    // document.getElementById('filterScience').addEventListener('change', fetchGames);
-  });
+      // Asynchronous function to fetch games from the RAWG API
+      const fetchGames = async () => {
+        // Show a loading message while we wait for the API response.
+        gamesContainer.innerHTML = '<p>Loading games...</p>';
+
+        try {
+          const response = await fetch(API_URL);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const data = await response.json();
+          
+          // Clear the loading message after the data is received.
+          gamesContainer.innerHTML = '';
+          
+          if (data.results && data.results.length > 0) {
+            data.results.forEach(game => {
+              // Map the API data to a format our card function can use.
+              const cardData = {
+                title: game.name,
+                // Combine genres and platforms to create a simple description.
+                description: `Genres: ${game.genres.map(g => g.name).join(', ')} | Platforms: ${game.platforms.map(p => p.platform.name).join(', ')}`,
+                rating: getStarRating(game.rating_top),
+                image_url: game.background_image
+              };
+              const gameCard = createGameCard(cardData);
+              gamesContainer.appendChild(gameCard);
+            });
+          } else {
+            gamesContainer.innerHTML = '<p>No games found.</p>';
+          }
+        } catch (error) {
+          console.error('Failed to fetch games:', error);
+          gamesContainer.innerHTML = `<p style="color: red;">Error: Failed to load games. Check your API key and try again. Reason: ${error.message}</p>`;
+        }
+      };
+
+      // Call the function to start fetching games when the page loads.
+      fetchGames();
+    });
