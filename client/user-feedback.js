@@ -62,7 +62,6 @@ function timeAgo(dateString) {
 function renderFeedback(feedbackList) {
   const container = document.getElementById('feedbackCardsContainer');
   container.innerHTML = ''; // Clear existing feedback
-  document.getElementById('feedbackLoading').style.display = 'none'; // Hide loading indicator
 
   if (feedbackList.length === 0) {
     container.innerHTML = '<p>No feedback available yet.</p>';
@@ -135,7 +134,6 @@ function updateStatistics(feedbackList) {
 
 // Function to fetch feedback from API
 async function fetchFeedback() {
-  document.getElementById('feedbackLoading').style.display = 'block'; // Show loading indicator
   try {
     const response = await fetch(baseURL + "/feedback");
     if (!response.ok) {
@@ -149,7 +147,6 @@ async function fetchFeedback() {
     console.error("Error fetching feedback:", error);
     showMessageBox("Error", "Failed to load feedback. Please try again later.");
     document.getElementById('feedbackCardsContainer').innerHTML = '<p>Could not load feedback. Please check your internet connection or try again later.</p>';
-    document.getElementById('feedbackLoading').style.display = 'none'; // Hide loading indicator
   }
 }
 
